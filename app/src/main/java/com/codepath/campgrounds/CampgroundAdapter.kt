@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-
 private const val TAG = "CampgroundAdapter"
 
 class CampgroundAdapter(private val context: Context, private val campgrounds: List<Campground>) :
