@@ -19,21 +19,17 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        // Find the views for the screen
         campgroundNameTV = findViewById(R.id.campgroundName)
         campgroundDescriptionTV = findViewById(R.id.campgroundDescription)
         campgroundLatLongTV = findViewById(R.id.campgroundLocation)
         campgroundImageIV = findViewById(R.id.campgroundImage)
 
-        // Get the extra from the Intent
         val campground = intent.getSerializableExtra(CAMPGROUND_EXTRA) as Campground
 
-        // Set the name, location, and description information
         campgroundNameTV.text = campground.name
         campgroundDescriptionTV.text = campground.description
         campgroundLatLongTV.text = campground.latLong
 
-        // Load the image using Glide
         Glide.with(this)
             .load(campground.imageUrl)
             .into(campgroundImageIV)
